@@ -48,9 +48,6 @@ const Landing = () => {
     }
   }
 
-  let open;
-  let closed;
-
   // Declarations for page count
   const PER_PAGE = 10;
   const offset = currentPage * PER_PAGE;
@@ -64,14 +61,8 @@ const Landing = () => {
     } else if(state.places){
       return state.places.slice(offset, offset + PER_PAGE)
         .map((place) =>{
-        let time = place.opening_hours.hours;
-        const {id, name, location:{address:{street_address, postal_code, locality}}} = place;
-        for(let key in time){
-          // console.log(time[key].opens)
-          open =  time[key].opens;
-          closed = time[key].closes;
-        }
-
+        const {id, name, location:{address:{street_address, postal_code, locality}}, opening_hours:{hours:{open, closes}}} = place;
+      
         return (
             <Dashboard 
             key={id} 
@@ -79,7 +70,7 @@ const Landing = () => {
             street={street_address}
             postCode={postal_code}
             locality={locality}
-            open={openingHour(open, closed)}/>
+            open={openingHour(open, closes)}/>
             )
           })
         
