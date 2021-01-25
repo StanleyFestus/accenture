@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Opens = ({week_day: {}}) => {
+const Opens = (week_day) => {
  return (
    <div>
      <div>{week_day.monday}</div>

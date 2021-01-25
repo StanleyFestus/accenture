@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "jest": {
-    "setupTestFrameworkScriptFile": "./__tests__/api/api_spec.js"
+    "setupTestFrameworkScriptFile": "./tests/api/api_spec.js"
   },
   "scripts": {
     "start": "node index.js",

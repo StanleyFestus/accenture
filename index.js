@@ -56,7 +56,6 @@ app.get('/api/places', async (req, res) => {
 })
 
 
-
 // Handle all other exceptions
 app.get('/api/*', (req, res, next) => {
   res.status(404).send({

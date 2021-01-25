@@ -13,7 +13,15 @@
   color: #6c7ac9;
 }
 
-.pagination__link {
+.pagination__link_left {
+  margin-left: 200px;
+}
+
+.pagination__link_right {
+  margin-right: 200px;
+}
+
+.pagination__link_left, .pagination__link_right {
   font-weight: bold;
 }
 

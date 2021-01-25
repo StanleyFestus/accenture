@@ -61,7 +61,7 @@ const Landing = () => {
     var today = new Date();
     var time = today.getHours() + ":" + today.getMinutes();
     
-    if(open == null && close == null){
+    if(open === null && close === null){
       return 'No info about opening hours'
     } else if(open <= time && close >= time){
     return 'open now'
@@ -124,14 +124,15 @@ const Landing = () => {
      {currentPageData()}
      </div>
       <div>
-        {state.places && <ReactPaginate 
+        {state.places && <ReactPaginate
+        style={{width: '300px'}}
           previousLabel={"← Previous"}
           nextLabel={"Next →"}
           pageCount={pageCount}
           onPageChange={hanldePagePick}
           containerClassName={"pagination"}
-          previousLinkClassName={"pagination__link"}
-          nextLinkClassName={"pagination__link"}
+          previousLinkClassName={"pagination__link_left"}
+          nextLinkClassName={"pagination__link_right"}
           disabledClassName={"pagination__link--disabled"}
           activeClassName={"pagination__link--active"}
         />}
